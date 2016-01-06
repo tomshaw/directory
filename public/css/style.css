@@ -1,0 +1,174 @@
+/* ==========================================================================
+Variables
+========================================================================== */
+/**
+ * Colors
+ */
+/**
+ * Backgrounds
+ */
+/**
+ * Breakpoints
+ */
+/********************
+ Mixins
+*********************/
+/**
+ * Super simple rotate element
+ */
+/**
+ * Super light grid.
+ */
+/**
+ * rem fallback - credits: http://zerosixthree.se/
+ */
+/**
+ * center vertically and/or horizontally an absolute positioned element
+ */
+/**
+ * border radius
+ */
+/**
+ * antialiasing mode font rendering
+ */
+/*  
+ * @mixin cover-background() 
+ * 
+ * --Parameters:
+ * 
+ * $img: URI of image you want to use as the background 
+ * 
+ * --Optional:
+ * $background-top:  Defaults to "center - sets the "top" value of the background position
+ * $background-left: Defaults to "center - sets the "left" value of the background position.
+ * $background-attachment: Defaults to "fixed" - allows you to specify background attachment.
+ */
+/**
+ * Maintain Aspect Ratio Mixin
+ * @see http://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color: #000;
+  background: #1c1c1c;
+  font-family: 'Open Sans', serif;
+  font-size: 15px;
+  height: 100%;
+  line-height: 180%;
+  /*overflow-x: hidden;*/
+  overflow: hidden;
+}
+
+a {
+  color: #19A598;
+  text-decoration: none;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+
+li {
+  list-style: none;
+}
+
+/* ==========================================================================
+ Content Wrapper
+========================================================================== */
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  -webkit-transition: all .9s ease-out;
+  transition: all .9s ease-out;
+}
+
+/* ==========================================================================
+ Main iFrame.
+========================================================================== */
+iframe {
+  border: none;
+}
+
+.iframe {
+  border: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 0;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.iframe.show {
+  opacity: 1;
+}
+
+/* ==========================================================================
+ Directory Navigation
+========================================================================== */
+.navigation {
+  position: fixed;
+  top: 50%;
+  right: 70px;
+  width: 27px;
+  height: 61px;
+  margin-top: -28px;
+  z-index: 1;
+}
+
+.navigation .arrow {
+  position: relative;
+  display: block;
+  width: 27px;
+  height: 27px;
+  margin-bottom: 7px;
+  background: #19A598;
+  cursor: pointer;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+
+.navigation .arrow:last-child {
+  margin-bottom: 0;
+}
+
+.navigation .arrow:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #fff;
+  border-bottom: none;
+  border-right: none;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+
+.navigation .arrow.prev:before {
+  margin: -3px 0 0 -6px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.navigation .arrow.next:before {
+  margin: -8px 0 0 -5px;
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}

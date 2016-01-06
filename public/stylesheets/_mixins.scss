@@ -1,0 +1,128 @@
+/********************
+ Mixins
+*********************/
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+    @media only screen and (min-width: $S) { @content; } 
+  }
+  @else if $canvas == M {
+    @media only screen and (min-width: $M) { @content; } 
+  }
+  @else if $canvas == L {
+    @media only screen and (min-width: $L) { @content; } 
+  }
+  @else if $canvas == XL {
+    @media only screen and (min-width: $XL) { @content; } 
+  }
+}
+
+/**
+ * Super simple rotate element
+ */
+
+@mixin tilt($rotate, $v, $h) {
+  -webkit-transform: rotate($rotate) tranlate($v, $h);
+      -ms-transform: rotate($rotate) tranlate($v, $h);
+          transform: rotate($rotate) tranlate($v, $h);
+}
+
+/**
+ * Super light grid.
+ */
+@mixin column($percentage, $float-direction:left) {
+  width: 100% * $percentage;
+  float: $float-direction;
+}
+
+/**
+ * rem fallback - credits: http://zerosixthree.se/
+ */
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/**
+ * center vertically and/or horizontally an absolute positioned element
+ */
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+}
+
+/**
+ * border radius
+ */
+@mixin border-radius($radius:.25em) {
+  border-radius: $radius;
+}
+
+/**
+ * antialiasing mode font rendering
+ */
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*  
+ * @mixin cover-background() 
+ * 
+ * --Parameters:
+ * 
+ * $img: URI of image you want to use as the background 
+ * 
+ * --Optional:
+ * $background-top:  Defaults to "center - sets the "top" value of the background position
+ * $background-left: Defaults to "center - sets the "left" value of the background position.
+ * $background-attachment: Defaults to "fixed" - allows you to specify background attachment.
+ */
+@mixin cover-background($img, $background-top:"center", $background-left:"center", $background-attachment:"fixed") {
+  background: url($img) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment); 
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;  
+}
+
+/**
+ * Maintain Aspect Ratio Mixin
+ * @see http://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+ */
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

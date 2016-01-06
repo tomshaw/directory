@@ -1,0 +1,26 @@
+{
+  "name": "Bower Dependencies",
+  "version": "1.0.0",
+  "main": "public/css/application.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "jquery.pulsate": "*",
+    "toastr": "~2.1.2",
+    "underscore": "~1.8.3",
+    "font-awesome": "fontawesome#~4.5.0",
+    "datatables": "~1.10.10",
+    "bootstrap-datepicker": "~1.5.0",
+    "pikaday": "~1.4.0",
+    "jquery.tagsinput": "~1.3.6",
+    "jstree": "~3.2.1",
+    "Flot": "flot#~0.8.3",
+    "jquery.easy-pie-chart": "~2.1.6",
+    "counterup": "~1.0.0",
+    "waypoints": "~4.0.0"
+  }
+}

@@ -1,0 +1,24 @@
+{% extends 'layout.phtml' %}
+
+{% block body %}
+
+<div class="wrapper">
+  <a class="burger" id="burger"><span></span></a>
+  <div class="overlay"> 
+    <ul class="menu">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/reset">Reset</a></li>
+      <li><a href="/categories">Categories</a></li>
+      <li><a href="/slideshow">Slideshow</a></li>
+    </ul>
+    <div class="project"><p class="info"></p></div>
+  </div>
+  <div class="navigation"> 
+    <span class="arrow prev" data-paginate="-"></span> 
+    <span class="arrow next" data-paginate="+"></span>     
+  </div>
+  <iframe src="" class="iframe"></iframe>
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+/* ==========================================================================
+Variables
+========================================================================== */
+
+@import "compass/css3";
+@import "compass/utilities";
+
+$font-family-light: 'OpenSansLight', sans-serif;
+$font-family-regular: 'OpenSansRegular', sans-serif;
+$font-family-bold: 'OpenSansBold', sans-serif;
+$font-family-condensed: 'OpenSansCondensedBold', sans-serif;
+
+$text-color: #999 !default;
+$link-color: #666 !default;
+$link-color-hover: #333 !default;
+$link-color-active: #333 !default;
+$link-color-focus: #333 !default;
+$link-color-darken: darken($link-color-hover, 15%) !default;
+
+/**
+ * Colors
+ */
+
+$color-1: #000;  
+$color-2: #000; 
+$color-3: #000;
+ 
+/**
+ * Backgrounds
+ */
+
+$background-1: #000;
+$background-1: #000;
+$background-1: #000;
+
+
+/**
+ * Breakpoints
+ */
+
+$screen-xs-min: 480px !default;
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1200px !default;
+
+$S:     480px;   
+$M:     768px;  
+$L:     992px;   
+$XL:   1200px;    
